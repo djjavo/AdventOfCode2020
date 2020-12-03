@@ -35,5 +35,5 @@ def part2():
 	return validPasswords
 
 initialise()
-print("Valid passwords:", part1())
-print("Valid passwords:", part2())
+print("Valid passwords:", part1()) # 474
+print("Valid passwords:", part2()) # 745
