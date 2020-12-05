@@ -8,39 +8,6 @@ def initialise():
 	# 7 chars: 128 rows on the plane (numbered 0 through 127)
 	# 3 chars: 8 columns on the plane (numbered 0 through 7)
 
-def calculateRow(input):
-
-	rowMin = 0
-	rowMax = 127
-
-	if len(input) != 7:
-		raise Exception
-
-	for letter in input:
-		if letter == "F":
-			rowMax = rowMax-math.ceil((rowMax-rowMin)/2)
-		if letter == "B":
-			rowMin = rowMin+math.ceil((rowMax-rowMin)/2)
-
-	return rowMin
-
-def calculateCol(input):
-
-	colMin = 0
-	colMax = 7
-
-	if len(input) != 3:
-		raise Exception
-
-	for letter in input:
-		if letter == "L":
-			colMax = colMax-math.ceil((colMax-colMin)/2)
-		if letter == "R":
-			colMin = colMin+math.ceil((colMax-colMin)/2)
-
-	return colMin
-
-# Replacement for calculateCol/calculateRow
 def toBinary(input):
 	# https://stackoverflow.com/questions/3411771/best-way-to-replace-multiple-characters-in-a-string
 	return int(input.replace('F', '0').replace('L', '0').replace('B', '1').replace('R', '1'), 2)
