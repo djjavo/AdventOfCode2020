@@ -1,6 +1,7 @@
 import time
 import os
 
+
 def loadInputFile(filename):
     filepath = os.path.join("data", filename)
 
@@ -9,11 +10,13 @@ def loadInputFile(filename):
 
     return data
 
-# https://realpython.com/python-timer/#python-timer-functions
+
 class TimerError(Exception):
     """A custom exception used to report errors in use of Timer class"""
 
+
 class Timer:
+    # https://realpython.com/python-timer/#python-timer-functions
     def __init__(self, name):
         self.name = name
         self._start_time = None
@@ -34,4 +37,3 @@ class Timer:
         self._start_time = None
 
         print("Elapsed time ({}): {:.3f}s".format(self.name, elapsed_time))
-
